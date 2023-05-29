@@ -1,39 +1,30 @@
 
-var contadorBraco = 0
-var resultanteBraco = document.querySelector('#resultadobraco')
+const controle =  document.querySelectorAll(".controle-ajuste")
+
+controle.forEach((elemento) => {
+    elemento.addEventListener("click", (evento) => {
+    manipulaDados(evento.target.textContent, evento.target.parentNode)
+
+    })  
+})
 
 
-document.querySelector('#somarbraco').addEventListener('click', aumentaValorBraco)
-document.querySelector('#subtrairbraco').addEventListener('click',diminuiValorBraco)
+function manipulaDados(operacao,controle){
+    const peca = controle.querySelector(".controle-contador")
 
-
-function aumentaValorBraco(){
-    contadorBraco +=1
-    resultanteBraco.value = contadorBraco
-    
-  
-    if(resultanteBraco.value >=20){
-
-        resultanteBraco.value = 20
-        contadorBraco = 20
-        console.log(resultanteBraco.value)
-        console.log(contadorBraco)
+    if(operacao === "-"){
+        braco.value = parseInt(braco.value) -1    
     }
-} 
+
+    else{
+        braco.value = parseInt(braco.value) +1
+    }
+
+}
 
 
-function diminuiValorBraco(){
-    contadorBraco -=1
-    resultanteBraco.value = contadorBraco
-    
-    if(resultanteBraco.value <=0){
 
-        resultanteBraco.value = 0
-        contadorBraco = 0
-    } 
- 
 
-}   
 
 
 
